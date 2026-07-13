@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentru tine ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff8fb8,#ffd9e8);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:25px;
+width:90%;
+max-width:430px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,0,0,.2);
+position:relative;
+z-index:2;
+}
+
+button{
+background:#ff2d75;
+color:white;
+border:none;
+padding:15px 35px;
+font-size:22px;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#surprise{
+display:none;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+h1{
+color:#ff2d75;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.7;
+color:#444;
+margin-bottom:20px;
+}
+
+img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+.heart{
+position:fixed;
+top:-30px;
+animation:fall linear infinite;
+pointer-events:none;
+user-select:none;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="start">
+
+<h1>❤️ O surpriză pentru tine ❤️</h1>
+
+<button onclick="showLove()">
+Apasă aici ❤️
+</button>
+
+</div>
+
+<div id="surprise">
+
+<h1>❤️ Pentru iubirea mea ❤️</h1>
+
+<p>
+Dacă ai deschis acest link, înseamnă că vreau să-ți amintesc cât de mult însemni pentru mine. ❤️
+<br><br>
+Ești cea mai frumoasă parte din viața mea. Te iubesc infinit. ❤️
+</p>
+
+<img src="6DA4F7AF-4240-4504-9B45-4A1AE7505013.jpeg" alt="Noi">
+
+</div>
+
+</div>
+
+<script>
+
+function showLove(){
+
+document.getElementById("start").style.display="none";
+document.getElementById("surprise").style.display="block";
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+heart.style.animationDelay=Math.random()*3+"s";
+
+document.body.appendChild(heart);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
